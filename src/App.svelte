@@ -105,6 +105,14 @@
   }
 </script>
 
+<svelte:head>
+
+  <meta
+    name="description"
+    content="An implementation of TodoMVC using the Svelte framework" />
+
+</svelte:head>
+
 <header class="header">
 
   <h1>todos</h1>
