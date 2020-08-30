@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import EditField from "./EditField.svelte";
 
   const ENTER_KEY = 13;
@@ -103,6 +104,12 @@
   } catch (err) {
     // noop
   }
+
+  let newTodoField: HTMLInputElement;
+
+  onMount(() => {
+    newTodoField.focus();
+  });
 </script>
 
 <svelte:head>
@@ -117,13 +124,12 @@
 
   <h1>todos</h1>
 
-  <!-- svelte-ignore a11y-autofocus -->
   <input
+    bind:this={newTodoField}
     class="new-todo"
     on:keydown={createNew}
     placeholder="What needs to be done?"
-    aria-label="What needs to be done?"
-    autofocus />
+    aria-label="What needs to be done?" />
 
 </header>
 
