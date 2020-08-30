@@ -114,6 +114,7 @@
     class="new-todo"
     on:keydown={createNew}
     placeholder="What needs to be done?"
+    aria-label="What needs to be done?"
     autofocus />
 
 </header>
