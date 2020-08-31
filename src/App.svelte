@@ -2,9 +2,6 @@
   import { onMount } from "svelte";
   import EditField from "./EditField.svelte";
 
-  const ENTER_KEY = 13;
-  const ESCAPE_KEY = 27;
-
   let currentFilter = "all";
 
   interface TodoItem {
@@ -44,37 +41,39 @@
     items = items.slice(0, index).concat(items.slice(index + 1));
   }
 
-  function toggleAll(event) {
+  function toggleAll(event: Event) {
     items = items.map((item) => ({
       id: item.id,
       description: item.description,
-      completed: event.target.checked,
+      completed: (event.target as HTMLInputElement).checked,
     }));
   }
 
-  function createNew(event) {
-    if (event.which === ENTER_KEY) {
-      if (event.target.value.length > 0) {
+  function createNew(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      if (newTodoField.value.length > 0) {
         items = items.concat({
           id: uuid(),
-          description: event.target.value,
+          description: newTodoField.value,
           completed: false,
         });
-        event.target.value = "";
+        newTodoField.value = "";
       }
     }
   }
 
-  function handleEdit(event) {
-    if (event.which === ENTER_KEY) {
-      event.target.blur();
-    } else if (event.which === ESCAPE_KEY) {
-      editing = null;
+  function handleEdit(event: KeyboardEvent) {
+    const editItemField = event.target as HTMLInputElement;
+    if (event.key === "Enter") {
+      editItemField.blur();
+    } else if (event.key === "Escape" || event.key === "Esc") {
+      editItemField.value = items[editing].description;
+      editItemField.blur();
     }
   }
 
-  function submit(event) {
-    items[editing].description = event.target.value;
+  function submit(event: Event) {
+    items[editing].description = (event.target as HTMLInputElement).value;
     editing = null;
   }
 
