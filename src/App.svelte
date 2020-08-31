@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { v4 as uuidv4 } from "uuid";
+
   import EditField from "./EditField.svelte";
 
   let currentFilter = "all";
@@ -53,7 +55,7 @@
     if (event.key === "Enter") {
       if (newTodoField.value.length > 0) {
         items = items.concat({
-          id: uuid(),
+          id: uuidv4(),
           description: newTodoField.value,
           completed: false,
         });
@@ -75,16 +77,6 @@
   function submit(event: Event) {
     items[editing].description = (event.target as HTMLInputElement).value;
     editing = null;
-  }
-
-  function uuid() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (
-      c
-    ) {
-      var r = (Math.random() * 16) | 0,
-        v = c == "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
   }
 
   function toggleCompleted(item: TodoItem) {
