@@ -7,9 +7,15 @@
 
   let currentFilter = "all";
 
-  let items = [];
+  interface TodoItem {
+    id: string;
+    description: string;
+    completed: boolean;
+  }
 
-  let editing = null;
+  let items: TodoItem[] = [];
+
+  let editing: number = null;
 
   try {
     items = JSON.parse(localStorage.getItem("todos-svelte")) || [];
@@ -34,7 +40,7 @@
     items = items.filter((item) => !item.completed);
   }
 
-  function remove(index) {
+  function remove(index: number) {
     items = items.slice(0, index).concat(items.slice(index + 1));
   }
 
@@ -82,7 +88,7 @@
     });
   }
 
-  function toggleCompleted(item) {
+  function toggleCompleted(item: TodoItem) {
     items = items.map((todo) => {
       if (item.id === todo.id) return { ...todo, completed: !todo.completed };
       return todo;
