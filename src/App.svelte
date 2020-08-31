@@ -121,7 +121,8 @@
 
   <meta
     name="description"
-    content="An implementation of TodoMVC using the Svelte framework" />
+    content="An implementation of TodoMVC using the Svelte framework with
+    TypeScript" />
 
 </svelte:head>
 
