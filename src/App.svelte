@@ -110,16 +110,13 @@
 </script>
 
 <svelte:head>
-
   <meta
     name="description"
     content="An implementation of TodoMVC using the Svelte framework with
     TypeScript" />
-
 </svelte:head>
 
 <header class="header">
-
   <h1>todos</h1>
 
   <input
@@ -128,12 +125,10 @@
     on:keydown={createNew}
     placeholder="What needs to be done?"
     aria-label="What needs to be done?" />
-
 </header>
 
 {#if items.length > 0}
   <section class="main">
-
     <input
       id="toggle-all"
       class="toggle-all"
@@ -143,14 +138,11 @@
     <label for="toggle-all">Mark all as complete</label>
 
     <ul class="todo-list">
-
       {#each filtered as item, index (item.id)}
         <li
           class="{item.completed ? 'completed' : ''}
-          {editing === index ? 'editing' : ''}">
-
+            {editing === index ? 'editing' : ''}">
           <div class="view">
-
             <input
               class="toggle"
               type="checkbox"
@@ -163,7 +155,6 @@
             </label>
 
             <button on:click={() => remove(index)} class="destroy" />
-
           </div>
 
           {#if editing === index}
@@ -172,14 +163,11 @@
               keydownListener={handleEdit}
               blurListener={submit} />
           {/if}
-
         </li>
       {/each}
-
     </ul>
 
     <footer class="footer">
-
       <span class="todo-count">
         <strong>{numActive}</strong>
         {numActive === 1 ? 'item' : 'items'} left
@@ -212,8 +200,6 @@
           Clear completed
         </button>
       {/if}
-
     </footer>
-
   </section>
 {/if}
