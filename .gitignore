@@ -1,7 +1,6 @@
-node_modules/
-public/build/
-.vercel/
-.vscode/
+/node_modules/
+/public/build/
+/.vercel/
+/.vscode/
 
 .DS_Store
-.jshintrc
