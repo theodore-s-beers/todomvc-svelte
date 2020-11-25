@@ -170,7 +170,8 @@
     <footer class="footer">
       <span class="todo-count">
         <strong>{numActive}</strong>
-        {numActive === 1 ? 'item' : 'items'} left
+        {numActive === 1 ? 'item' : 'items'}
+        left
       </span>
 
       <ul class="filters">
