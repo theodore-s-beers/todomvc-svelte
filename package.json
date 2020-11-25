@@ -4,7 +4,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "standardize": "standard --fix ./rollup.config.js",
+    "standardize": "find . -name '*.js' ! -path './node_modules/*' ! -path './public/build/*' -exec standard --fix {} ';'",
     "start": "sirv public",
     "validate": "svelte-check"
   },
