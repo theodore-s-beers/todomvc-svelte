@@ -1,6 +1,9 @@
 {
   "name": "todomvc-svelte",
   "version": "0.1.0",
+  "description": "TodoMVC implementation in Svelte, with TypeScript",
+  "repository": "github:theodore-s-beers/todomvc-svelte",
+  "license": "MIT",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
