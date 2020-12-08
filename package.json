@@ -12,7 +12,7 @@
     "validate": "svelte-check"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.8",
+    "sirv-cli": "^1.0.10",
     "uuid": "^8.3.1"
   },
   "devDependencies": {
