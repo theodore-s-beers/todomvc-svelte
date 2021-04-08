@@ -17,4 +17,5 @@
   value={valueAttr}
   class="edit"
   on:keydown={keydownListener}
-  on:blur={blurListener} />
+  on:blur={blurListener}
+/>
