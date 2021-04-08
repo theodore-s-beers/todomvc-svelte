@@ -113,7 +113,8 @@
   <meta
     name="description"
     content="An implementation of TodoMVC using the Svelte framework with
-    TypeScript" />
+    TypeScript"
+  />
 </svelte:head>
 
 <header class="header">
@@ -124,7 +125,8 @@
     class="new-todo"
     on:keydown={createNew}
     placeholder="What needs to be done?"
-    aria-label="What needs to be done?" />
+    aria-label="What needs to be done?"
+  />
 </header>
 
 {#if items.length > 0}
@@ -134,20 +136,26 @@
       class="toggle-all"
       type="checkbox"
       on:change={toggleAll}
-      checked={numCompleted === items.length} />
+      checked={numCompleted === items.length}
+    />
     <label for="toggle-all">Mark all as complete</label>
 
     <ul class="todo-list">
       {#each filtered as item, index (item.id)}
         <li
           class="{item.completed ? 'completed' : ''}
-            {editing === index ? 'editing' : ''}">
+            {editing ===
+          index
+            ? 'editing'
+            : ''}"
+        >
           <div class="view">
             <input
               class="toggle"
               type="checkbox"
               checked={item.completed}
-              on:click={() => toggleCompleted(item)} />
+              on:click={() => toggleCompleted(item)}
+            />
 
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label on:dblclick={() => (editing = index)}>
@@ -161,7 +169,8 @@
             <EditField
               valueAttr={item.description}
               keydownListener={handleEdit}
-              blurListener={submit} />
+              blurListener={submit}
+            />
           {/if}
         </li>
       {/each}
@@ -170,27 +179,29 @@
     <footer class="footer">
       <span class="todo-count">
         <strong>{numActive}</strong>
-        {numActive === 1 ? 'item' : 'items'}
+        {numActive === 1 ? "item" : "items"}
         left
       </span>
 
       <ul class="filters">
         <li>
-          <a class={currentFilter === 'all' ? 'selected' : ''} href="#all">
+          <a class={currentFilter === "all" ? "selected" : ""} href="#all">
             All
           </a>
         </li>
         <li>
           <a
-            class={currentFilter === 'active' ? 'selected' : ''}
-            href="#active">
+            class={currentFilter === "active" ? "selected" : ""}
+            href="#active"
+          >
             Active
           </a>
         </li>
         <li>
           <a
-            class={currentFilter === 'completed' ? 'selected' : ''}
-            href="#completed">
+            class={currentFilter === "completed" ? "selected" : ""}
+            href="#completed"
+          >
             Completed
           </a>
         </li>
