@@ -144,10 +144,7 @@
       {#each filtered as item, index (item.id)}
         <li
           class="{item.completed ? 'completed' : ''}
-            {editing ===
-          index
-            ? 'editing'
-            : ''}"
+            {editing === index ? 'editing' : ''}"
         >
           <div class="view">
             <input
