@@ -1,4 +1,5 @@
 /* global location, XMLHttpRequest */
+
 (function () {
   'use strict'
 
