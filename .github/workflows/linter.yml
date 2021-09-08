@@ -12,12 +12,9 @@ name: Lint Code Base
 #
 
 #############################
-# Start the job on all push #
+# Start job on PR to master #
 #############################
 on:
-  push:
-    branches-ignore: [master]
-    # Remove the line above to run when pushing to master
   pull_request:
     branches: [master]
 

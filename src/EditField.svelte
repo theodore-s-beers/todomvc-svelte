@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  export let valueAttr;
-  export let keydownListener;
-  export let blurListener;
+  export let valueAttr: string;
+  export let keydownListener: EventListener;
+  export let blurListener: EventListener;
 
   let editField: HTMLInputElement;
 
