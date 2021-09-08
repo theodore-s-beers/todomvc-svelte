@@ -37,18 +37,18 @@ function serve () {
 export default {
   input: 'src/main.ts',
   output: {
-    // sourcemap: true,
+    sourcemap: !production,
     format: 'iife',
     name: 'app',
     file: 'public/build/bundle.js'
   },
   plugins: [
     svelte({
-      preprocess: sveltePreprocess()
-      /* compilerOptions: {
+      preprocess: sveltePreprocess({ sourceMap: !production }),
+      compilerOptions: {
         // enable run-time checks when not in production
-        dev: !production,
-      }, */
+        dev: !production
+      }
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance

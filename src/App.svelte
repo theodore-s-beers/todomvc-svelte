@@ -14,11 +14,12 @@
 
   let items: TodoItem[] = [];
 
-  let editing: number = null;
+  let editing: number = -1;
 
-  try {
-    items = JSON.parse(localStorage.getItem("todos-svelte")) || [];
-  } catch (err) {
+  const localTodos = localStorage.getItem("todos-svelte");
+  if (localTodos) {
+    items = JSON.parse(localTodos) || [];
+  } else {
     items = [];
   }
 
@@ -76,7 +77,7 @@
 
   function submit(event: Event) {
     items[editing].description = (event.target as HTMLInputElement).value;
-    editing = null;
+    editing = -1;
   }
 
   function toggleCompleted(item: TodoItem) {
