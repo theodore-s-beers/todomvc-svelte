@@ -14,7 +14,7 @@
     "start": "sirv public --no-clear"
   },
   "dependencies": {
-    "sirv-cli": "^2.0.1",
+    "sirv-cli": "^2.0.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
