@@ -18,13 +18,13 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
     "@rollup/plugin-typescript": "^8.3.2",
     "@tsconfig/svelte": "^3.0.0",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/parser": "^5.19.0",
-    "eslint": "^8.13.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
     "prettier": "^2.6.2",
     "rollup": "^2.70.2",
     "rollup-plugin-css-only": "^3.1.0",
@@ -35,7 +35,7 @@
     "svelte-check": "^2.7.0",
     "svelte-preprocess": "^4.10.6",
     "ts-standard": "^11.0.0",
-    "tslib": "^2.3.1",
+    "tslib": "^2.4.0",
     "typescript": "^4.6.3"
   },
   "ts-standard": {
