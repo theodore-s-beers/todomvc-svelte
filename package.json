@@ -22,7 +22,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^9.0.2",
     "@tsconfig/svelte": "^3.0.0",
-    "@types/uuid": "^8.3.4",
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.26.0",
     "prettier": "^2.7.1",
